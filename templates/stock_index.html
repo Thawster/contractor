@@ -7,7 +7,7 @@
     <a href='/stock/new'>New Stock</a>
 
     {% for item in stock %}
-        <h2>{{ item.title }}</h2>
+        <h2><a href='/stock/{{ item._id }}'>{{ item.title }}</a></h2>
         <small>{{ item.description }}</small>
     {% endfor %}
 {% endblock %}

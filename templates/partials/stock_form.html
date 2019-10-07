@@ -1,0 +1,28 @@
+<!-- templates/partials/stock_form.html -->
+
+<fieldset>
+    <legend>{{ title }}</legend>
+    <!-- TITLE -->
+    <p>
+        <label for='item-title'>Title</label><br>
+        <input id='item-title' type='text' name='title' value='{{ item.title }}'/>
+    </p>
+    
+    <!-- DESCRIPTION -->
+    <p>
+      <label for='description'>Description</label><br>
+      <input id='description' type='text' name='description' value='{{ item.description }}' />
+    </p>
+    
+    <!-- COST -->
+    <p>
+        <label for='item-costs'>Costs</label><br>
+        <p>Change costs in the form of '00.00'. Separate with a new line.</p>
+        <textarea id='item-costs' name='costs' rows='10'>{{ "\n".join(item.costs) }}</textarea>
+    </p>
+    </fieldset>
+    
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Save Item</button>
+    </p>

@@ -1,8 +1,8 @@
-<!-- templates/stock_new.html -->
+<!-- templates/stock_edit.html -->
 {% extends 'base.html' %}
 
 {% block content %}
-<form method='POST' action='/stock'>
+<form method='POST' action='/stock/{{item._id}}'>
     {% include 'partials/stock_form.html' %}
 </form>
 {% endblock %}
