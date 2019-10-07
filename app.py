@@ -61,5 +61,11 @@ def stock_edit(item_id):
     item = stock.find_one({'_id': ObjectId(item_id)})
     return render_template('stock_edit.html', item=item, title = 'Edit Item')
 
+@app.route('/stock/<item_id>/delete', methods=['POST'])
+def stock_delete(item_id):
+    """Delete one item."""
+    stock.delete_one({'_id': ObjectId(item_id)})
+    return redirect(url_for('stock_index'))
+
 if __name__ == '__main__':
     app.run(debug=True)
