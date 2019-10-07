@@ -3,6 +3,9 @@
 
 {% block content %}
     <h1>stock</h1>
+
+    <a href='/stock/new'>New Stock</a>
+
     {% for item in stock %}
         <h2>{{ item.title }}</h2>
         <small>{{ item.description }}</small>

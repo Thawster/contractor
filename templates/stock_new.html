@@ -1,0 +1,33 @@
+<!-- templates/stock_new.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<form method='POST' action='/stock'>
+    <fieldset>
+    <legend>New Item</legend>       
+    <!-- TITLE -->
+    <p>
+        <label for='item-title'>Title</label><br>
+        <input id='item-title' type='text' name='title' />
+    </p>
+
+    <!-- DESCRIPTION -->
+    <p>
+        <label for='description'>Description</label><br>
+        <input id='description' type='text' name='description' />
+    </p>
+
+    <!-- COST -->
+    <p>
+        <label for='item-costs'>Costs</label><br>
+        <p>Change costs in the form of '00.00'. Separate with a newline.</p>
+        <textarea id='item.costs' name='costs' rows='10'></textarea>
+    </p>
+</fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Save item</button>
+    </p>
+</form>
+{% endblock %}
