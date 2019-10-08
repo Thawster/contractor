@@ -2,12 +2,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>stock</h1>
+<h1>Snakes on a Store</h1>
 
-    <a href='/stock/new'>New Stock</a>
-
+<div class='row'>
     {% for item in stock %}
-        <h2><a href='/stock/{{ item._id }}'>{{ item.title }}</a></h2>
-        <small>{{ item.description }}</small>
+        <div class='col-md-3'>
+            <h2><a href='/stock/{{ item._id }}'>{{ item.title }}</a></h2>
+            <small>{{ item.cost }}</small>
+        </div>
     {% endfor %}
+</div>
 {% endblock %}

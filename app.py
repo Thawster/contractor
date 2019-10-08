@@ -25,8 +25,8 @@ def stock_submit():
     """Submit a new item."""
     item = {
         'title': request.form.get('title'),
-        'description': request.form.get('description')
-        'costs': request.form.get('costs').split()
+        'description': request.form.get('description'),
+        'cost': request.form.get('cost')
     }
     stock.insert_one(item)
     return redirect(url_for('stock_index'))
@@ -34,7 +34,7 @@ def stock_submit():
 @app.route('/stock/<item_id>')
 def stock_show(item_id):
     """Show a single item."""
-    item = stock.find_one({'_id': ObjectId(playlist_id)})
+    item = stock.find_one({'_id': ObjectId(item_id)})
     return render_template('stock_show.html', item=item)
 
 @app.route('/stock/<item_id>', methods=['POST'])
@@ -53,7 +53,7 @@ def stock_update(item_id):
 @app.route('/stock/new')
 def stock_new():
     """Create a new item."""
-    return render_template('stock_new.html', playlist = {}, title = 'New Item')
+    return render_template('stock_new.html', item = {}, title = 'New Item')
 
 @app.route('/stock/<item_id>/edit')
 def stock_edit(item_id):

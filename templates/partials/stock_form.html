@@ -3,26 +3,26 @@
 <fieldset>
     <legend>{{ title }}</legend>
     <!-- TITLE -->
-    <p>
+    <div class='form-group'>
         <label for='item-title'>Title</label><br>
-        <input id='item-title' type='text' name='title' value='{{ item.title }}'/>
-    </p>
+        <input class='form-control' id='item-title' type='text' name='title' value='{{ item.title }}'/>
+    </div>
     
     <!-- DESCRIPTION -->
-    <p>
+    <div class='form-group'>
       <label for='description'>Description</label><br>
-      <input id='description' type='text' name='description' value='{{ item.description }}' />
-    </p>
+      <input class='form-control' id='description' type='text' name='description' value='{{ item.description }}' />
+    </div>
     
     <!-- COST -->
-    <p>
-        <label for='item-costs'>Costs</label><br>
-        <p>Change costs in the form of '00.00'. Separate with a new line.</p>
-        <textarea id='item-costs' name='costs' rows='10'>{{ "\n".join(item.costs) }}</textarea>
-    </p>
+    <div class='form-group'>
+        <label for='item-cost'>Costs</label><br>
+        <p>Change cost in the form of '0.00'.</p>
+        <input class='form-control' id='cost' type='text' name='cost' value='{{ item.cost }}' />
+    </div>
     </fieldset>
     
     <!-- BUTTON -->
     <p>
-        <button type='submit'>Save Item</button>
+        <button type='submit'>Save Snake</button>
     </p>
